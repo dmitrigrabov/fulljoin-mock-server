@@ -10,7 +10,7 @@ export const config = {
 const app = new Hono().basePath('/api')
 
 app.use(
-  '/api/*',
+  '/api',
   cors({
     origin: '*',
     allowMethods: ['GET'],
