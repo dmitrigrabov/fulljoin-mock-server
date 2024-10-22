@@ -1,13 +1,24 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
 import data from './data.json'
-
+import { cors } from 'hono/cors'
 
 export const config = {
   runtime: 'edge'
 }
 
 const app = new Hono().basePath('/api')
+
+app.use(
+  '/api/*',
+  cors({
+    origin: '*',
+    allowMethods: ['*'],
+    exposeHeaders: ['*'],
+    maxAge: 600,
+    credentials: true,
+  })
+)
 
 app.get('/', (c) => {
   return c.json(addRandomData(data))
