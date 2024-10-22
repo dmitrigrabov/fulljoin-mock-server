@@ -1,16 +1,14 @@
 {
   "name": "fulljoin-mock-server",
-  "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "start": "vercel dev",
+    "deploy": "vercel"
   },
   "dependencies": {
-    "@hono/node-server": "^1.13.2",
     "hono": "^4.6.6"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
-    "tsx": "^4.7.1"
+    "vercel": "^37.12.0"
   },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
