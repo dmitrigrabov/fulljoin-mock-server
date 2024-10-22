@@ -13,8 +13,7 @@ app.use(
   '/api/*',
   cors({
     origin: '*',
-    allowMethods: ['*'],
-    exposeHeaders: ['*'],
+    allowMethods: ['GET'],
     maxAge: 600,
     credentials: true,
   })
